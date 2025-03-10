@@ -34,12 +34,13 @@ You can customize these variables directly in the script:
 
 ## Example Output
 
+```bash
+[12:34:56] Request 1/10 -> HTTP status code: 200
+[12:34:56] Request 2/10 -> HTTP status code: 200
+[12:34:56] Request 3/10 -> HTTP status code: 429
+⚠️  Rate limit triggered after 3 requests (HTTP 429).
 ```
-[12:34:56] Anfrage 1/10 -> HTTP-Code: 200
-[12:34:56] Anfrage 2 -> HTTP-Code: 200
-[12:34:56] Anfrage 3 -> HTTP-Code: 429
-Test abgeschlossen: Rate Limit erreicht.
-```
+
 
 ## License
 
