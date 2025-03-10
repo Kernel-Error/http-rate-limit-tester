@@ -13,19 +13,20 @@ NUM_REQUESTS=10
 # Wait time between requests (in seconds)
 WAIT_TIME=0
 
-echo "Starte Rate-Limit-Test für URL: $URL"
+echo "Starting rate-limit test for URL: $URL"
+echo "Sending $NUM_REQUESTS requests with a delay of $WAIT_TIME seconds..."
 
 for (( i=1; i<=NUM_REQUESTS; i++ )); do
     HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
     TIMESTAMP=$(date +"%T")
-    echo "[$TIMESTAMP] Anfrage $i/$NUM_REQUESTS -> HTTP-Code: $HTTP_CODE"
+    echo "[$TIMESTAMP] Request $i/$NUM_REQUESTS -> HTTP status code: $HTTP_CODE"
 
     if [ "$HTTP_CODE" -eq 429 ]; then
-        echo "⚠️  Rate Limit erreicht nach $i Requests (HTTP 429)."
+        echo "⚠️  Rate limit triggered after $i requests (HTTP 429)."
         exit 1
     fi
 
     sleep "$WAIT_TIME"
 done
 
-echo "Test abgeschlossen. Kein Rate-Limit erreicht."
+echo "✅ Test completed. No rate limit was triggered."
