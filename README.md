@@ -71,6 +71,17 @@ Sending 5 requests with a delay of 0 seconds...
 ⚠️  Rate limit triggered after 3 requests (HTTP 429).
 ```
 
+## Development
+
+Running the test suite requires:
+
+- [bats-core](https://github.com/bats-core/bats-core) (1.10+)
+- `python3` (used as mock HTTP server in tests)
+
+```bash
+bats rate_limit_test.bats
+```
+
 ## License
 
 This script is licensed under the MIT License.
