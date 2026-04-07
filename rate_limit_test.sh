@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author: Sebastian van de Meer
 # Website: https://www.kernel-error.de
 # License: MIT License

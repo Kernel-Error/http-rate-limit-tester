@@ -10,18 +10,23 @@ A simple Bash script to test HTTP rate limiting behavior by sending multiple HTT
 - Timestamped output for easy monitoring
 - Clearly indicates when a rate limit is reached (HTTP 429)
 
+## Prerequisites
+
+- `bash` (version 3.2+)
+- `curl`
+
 ## Usage
 
 Make the script executable:
 
 ```bash
-chmod +x rate-limit-test.sh
+chmod +x rate_limit_test.sh
 ```
 
 Execute the script:
 
 ```bash
-./rate-limit-test.sh
+./rate_limit_test.sh
 ```
 
 ## Configuration
